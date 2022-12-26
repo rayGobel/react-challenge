@@ -12,9 +12,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:prettier/recommended',
-    'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:react/jsx-runtime',
   ],
   settings: {
     react: {
@@ -28,19 +26,8 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'jest', 'prettier'],
+  plugins: ['jest', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'prettier/prettier': [
-      'error',
-      {
-        trailingComma: 'all',
-        endOfLine: 'lf',
-        semi: false,
-        singleQuote: true,
-        printWidth: 80,
-        tabWidth: 2,
-      },
-    ],
   },
 }

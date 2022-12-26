@@ -4,15 +4,15 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-scripts": "5.0.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "REACT_APP_DEV_DISABLE_ESLINT=true react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@testing-library/react-hooks": "^7.0.2",
+    "autoprefixer": "^10.4.13",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.0",
     "eslint-config-prettier": "^8.3.0",
@@ -57,6 +58,8 @@
     "fetch-mock": "^9.11.0",
     "json-server": "^0.17.0",
     "node-fetch": "^3.1.0",
-    "prettier": "^2.4.1"
+    "postcss": "^8.4.20",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^3.2.4"
   }
 }
