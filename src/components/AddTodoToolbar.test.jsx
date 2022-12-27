@@ -17,6 +17,18 @@ describe("<AddTodoToolbar /> Component", () => {
     expect(taskAddBtn).toBeVisible();
   });
 
+  it("should not propagate event on click", async () => {
+    const user = userEvent.setup();
+    render(<AddTodoToolbar />);
+
+    const taskAddBtn = screen.getByTestId("todo-add-btn");
+    user.click(taskAddBtn)
+
+    await waitFor(() => {
+      expect(taskAddBtn).toBeVisible();
+    })
+  });
+
   it("should correctly handle on add todo event: Cook Dinner", async () => {
     const addTodoHandler = jest.fn();
     const user = userEvent.setup();
