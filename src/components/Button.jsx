@@ -10,7 +10,7 @@ const variants = {
 
 const sizes = {
   small: "text-sm py-1 px-2",
-  medium: "py-2 px-4",
+  medium: "py-2 px-6",
 };
 
 const disabledModifier = {

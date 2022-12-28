@@ -20,7 +20,7 @@ export default function TodoList(props) {
 
     return (
       <li
-        className="flex justify-between items-center px-2 py-2"
+        className="flex justify-between items-center px-2 py-4"
         key={id}
         data-testid="todo-item"
       >
@@ -40,10 +40,12 @@ export default function TodoList(props) {
 
   return (
     <div
-      className="todolist border border-stone-400 rounded-md px-4 py-4 mt-2"
+      className="todolist border border-stone-400 rounded-md px-8 py-4 mt-2"
       data-testid="todo-list-container"
     >
-      <ul>{emptyTodos ? <p>No task available</p> : todoList}</ul>
+      <ul className="flex flex-col divide-y divide-stone-400">
+        {emptyTodos ? <p className="italic">No task available</p> : todoList}
+      </ul>
     </div>
   );
 }

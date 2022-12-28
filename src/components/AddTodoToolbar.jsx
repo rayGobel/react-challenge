@@ -20,7 +20,7 @@ export default function AddTodoToolbar(props) {
         <p className="text-sm">Add New Task</p>
         <input
           id="todo-input"
-          className="border-solid border-2 border-stone-900 px-3 py-2"
+          className="border-solid border border-stone-900 px-3 py-2"
           type="text"
           placeholder="task name"
           data-testid="todo-input"
