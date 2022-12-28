@@ -21,13 +21,11 @@ function useTodo() {
     data = [],
     refetch,
   } = useQuery("getTodos", fetchTodos);
-  const { mutate: addTodo, isLoading: addTodoLoading } = useMutation((data) =>
-    apiAddTodo(data)
-  );
+  const { mutate: addTodo, isLoading: addTodoLoading } =
+    useMutation(apiAddTodo);
 
-  const { mutate: deleteTodo, isLoading: deleteTodoLoading } = useMutation(
-    (todoId) => apiDeleteTodo(todoId)
-  );
+  const { mutate: deleteTodo, isLoading: deleteTodoLoading } =
+    useMutation(apiDeleteTodo);
 
   useEffect(() => {
     if (!addTodoLoading || !deleteTodoLoading) {
