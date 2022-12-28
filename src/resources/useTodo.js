@@ -3,7 +3,7 @@ import axios from "axios";
 import { useQuery, useMutation } from "react-query";
 
 function fetchTodos() {
-  return fetch("http://localhost:3001/tasks").then((res) => res.json());
+  return axios.get("http://localhost:3001/tasks").then((res) => res.data);
 }
 
 function apiAddTodo(todo) {
