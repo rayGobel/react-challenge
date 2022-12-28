@@ -20,12 +20,12 @@ export default function TodoList(props) {
 
     return (
       <li
-        className="flex justify-between items-center py-2"
+        className="flex justify-between items-center px-2 py-2"
         key={id}
         data-testid="todo-item"
       >
         <article>
-          <p className="font-semibold">{title}</p>
+          <p className="text-lg font-semibold">{title}</p>
         </article>
         <Button
           variant="primary-outline"
@@ -39,10 +39,11 @@ export default function TodoList(props) {
   });
 
   return (
-    <div className="todolist" data-testid="todo-list-container">
-      <ul className="mt-8">
-        {emptyTodos ? <p>No task available</p> : todoList}
-      </ul>
+    <div
+      className="todolist border border-stone-400 rounded-md px-4 py-4 mt-2"
+      data-testid="todo-list-container"
+    >
+      <ul>{emptyTodos ? <p>No task available</p> : todoList}</ul>
     </div>
   );
 }

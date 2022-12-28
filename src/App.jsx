@@ -5,8 +5,8 @@ import "./App.css";
 
 function LoadingComponent() {
   return (
-    <article>
-      <p>Fetching Data...</p>
+    <article className="px-4 py-4">
+      <p className="italic text-stone-400 font-semibold">Fetching Data...</p>
     </article>
   );
 }
@@ -15,9 +15,9 @@ function ErrorToast(props) {
   const { error } = props;
 
   return (
-    <article>
-      <p>Error fetching data</p>
-      <pre>{error || "--"}</pre>
+    <article className="px-4 py-4">
+      <p className="text-red-500 font-semibold">Error fetching data</p>
+      <pre className="italic">{error.message || "--"}</pre>
     </article>
   );
 }
@@ -33,6 +33,8 @@ export default function App() {
     deleteTodo(id);
   };
 
+  const canRenderTodoList = !isLoading && data && !error;
+
   return (
     <div className="App">
       <div className="App-container">
@@ -42,11 +44,13 @@ export default function App() {
 
         <AddTodoToolbar onAddTodo={handleAddTodo} />
 
-        {isLoading ? <LoadingComponent /> : null}
-
         {error ? <ErrorToast error={error} /> : null}
 
-        <TodoList todos={data} onDeleteTodo={handleDeleteTodo} />
+        {isLoading ? <LoadingComponent /> : null}
+
+        {canRenderTodoList ? (
+          <TodoList todos={data} onDeleteTodo={handleDeleteTodo} />
+        ) : null}
       </div>
     </div>
   );

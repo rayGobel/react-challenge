@@ -7,7 +7,7 @@ describe("<AddTodoToolbar /> Component", () => {
   it("should correctly render component", () => {
     render(<AddTodoToolbar />);
 
-    const taskNameLabel = screen.getByLabelText("Task Name");
+    const taskNameLabel = screen.getByLabelText("Add New Task");
     expect(taskNameLabel).toBeVisible();
 
     const taskNameInput = screen.getByTestId("todo-input");

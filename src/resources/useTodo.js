@@ -1,17 +1,22 @@
-import { useEffect } from "react";
 import axios from "axios";
+import { useEffect } from "react";
 import { useQuery, useMutation } from "react-query";
 
+const BASE_URL = "http://localhost:3001";
+const AXIOS_OPT = {
+  timeout: 2000,
+};
+
 function fetchTodos() {
-  return axios.get("http://localhost:3001/tasks").then((res) => res.data);
+  return axios.get(`${BASE_URL}/tasks`, AXIOS_OPT).then((res) => res.data);
 }
 
 function apiAddTodo(todo) {
-  return axios.post("http://localhost:3001/tasks", { title: todo });
+  return axios.post(`${BASE_URL}/tasks`, { title: todo }, AXIOS_OPT);
 }
 
 function apiDeleteTodo(todoId) {
-  return axios.delete(`http://localhost:3001/tasks/${todoId}`);
+  return axios.delete(`${BASE_URL}/tasks/${todoId}`);
 }
 
 function useTodo() {

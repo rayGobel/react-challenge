@@ -9,8 +9,12 @@ const variants = {
 };
 
 const sizes = {
-  small: "text-sm py-2 px-2",
+  small: "text-sm py-1 px-2",
   medium: "py-2 px-4",
+};
+
+const disabledModifier = {
+  primary: "disabled:opacity-40",
 };
 
 export default function Button(props) {
@@ -25,7 +29,7 @@ export default function Button(props) {
 
   const defaultBtn = "border";
   const btnText = "font-semibold";
-  const btnStyle = `${defaultBtn} ${btnText} ${variants[variant]} ${sizes[size]}`;
+  const btnStyle = `${defaultBtn} ${btnText} ${variants[variant]} ${sizes[size]} ${disabledModifier[variant]}`;
 
   return (
     <button
